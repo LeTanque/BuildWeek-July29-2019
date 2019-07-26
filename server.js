@@ -3,7 +3,7 @@ const cors = require('cors');
 const helmet = require('helmet');
 const bodyParser = require('body-parser')
 
-const configureRoutes = require('./routes/router.js');
+const configureRoutes = require('./api/routes/router.js');
 
 const server = express();
 
