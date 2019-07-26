@@ -1,12 +1,12 @@
 {
-    "name": "Databetes",
+    "name": "BuildWeek Demo July 29th",
     "version": "1.0.0",
-    "description": "Databetes API docs",
+    "description": "API docs",
     "title": "Api Documentation",
-    "url": "https://glucose-iq.herokuapp.com",
-    "sampleUrl": "https://glucose-iq.herokuapp.com",
+    "url": "https://demo.com",
+    "sampleUrl": "https://demo.com",
     "header": {
-        "title": "Databetes Manager",
+        "title": "BuildWeek Demo",
         "filename": "./apidocs/header.md"
     },
     "footer": {

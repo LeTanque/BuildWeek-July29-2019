@@ -1,9 +1,10 @@
-# Databetes v1.0.0
+# BuildWeek Demo July 29th v1.0.0
 
-Databetes API docs
+API docs
 
 - [Users](#users)
 	- [GET /api/users](#get-/api/users)
+	- [GET /api/users/:id](#get-/api/users/:id)
 	
 
 
@@ -32,32 +33,48 @@ Response
 [
     {
            "id": 1,
-           "username": "Patient Zero",
-           "bg_high": 7,
-           "bg_low": 3,
-           "bg_target_top": 7,
-           "bg_target_bottom": 3,
-           "height": null,
-           "weight": null,
-           "birthdate": null,
-           "diagnosis_date": null,
-           "gender": null,
-           "diabetes_type": null,
+           "user": "Patient Zero",
        },
        {
            "id": 2,
-           "username": "Patient One",
-           "bg_high": 6,
-           "bg_low": 4,
-           "bg_target_top": 7,
-           "bg_target_bottom": 3,
-           "height": null,
-           "weight": null,
-           "birthdate": null,
-           "diagnosis_date": null,
-           "gender": null,
-           "diabetes_type": null
+           "user": "Patient One",
        }
    ]
+```
+## GET /api/users/:id
+
+
+
+	GET /api/users/:id
+
+### Headers
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| authorization			| string			|  <p>This is for a protected route!</p>							|
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| id			| id			|  <p>User Id</p>							|
+
+### Examples
+
+Request
+
+```
+axios.get('/api/users/:id');
+```
+
+### Success Response
+
+Response
+
+```
+{
+    "id": 2,
+    "user": "Patient One",
+}
 ```
 
