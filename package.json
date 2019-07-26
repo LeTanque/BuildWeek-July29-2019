@@ -1,0 +1,37 @@
+{
+  "name": "buildweek-july29-2019",
+  "version": "1.0.0",
+  "description": "Demo of Build Week project for back end",
+  "main": "server.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "server": "nodemon index.js",
+    "api-docs": "apidoc -f .js -i api/ -o docs/",
+    "build-docs": "apidoc-markdown -p ./docs/ -o README.md",
+    "build-api": "npm-run-all api-docs build-docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeTanque/BuildWeek-July29-2019.git"
+  },
+  "author": "LeTANQUE",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LeTanque/BuildWeek-July29-2019/issues"
+  },
+  "homepage": "https://github.com/LeTanque/BuildWeek-July29-2019#readme",
+  "dependencies": {
+    "apidoc": "^0.17.7",
+    "apidoc-markdown": "^0.2.1",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "helmet": "^3.20.0",
+    "knex": "^0.19.1",
+    "nodemon": "^1.19.1",
+    "sqlite3": "^4.0.9"
+  }
+}

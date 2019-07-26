@@ -1,0 +1,21 @@
+{
+    "name": "Databetes",
+    "version": "1.0.0",
+    "description": "Databetes API docs",
+    "title": "Api Documentation",
+    "url": "https://glucose-iq.herokuapp.com",
+    "sampleUrl": "https://glucose-iq.herokuapp.com",
+    "header": {
+        "title": "Databetes Manager",
+        "filename": "./apidocs/header.md"
+    },
+    "footer": {
+        "filename":"./apidocs/footer.md"
+    },
+    "template": {
+        "withGenerator": true,
+        "withCompare": true
+    }
+}
+
+
