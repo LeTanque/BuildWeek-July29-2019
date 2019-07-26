@@ -14,55 +14,24 @@ server.use(express.json());
  *
  * @apiExample Request
  * axios.get('/api/users');
- *
- * @apiSuccess {id} id            User Id
- * @apiSuccess {string} username            Username (required, must be unique)
- * @apiSuccess {number} bg_high            User Bg_high (required)
- * @apiSuccess {number} bg_low            User Bg_low (required)
- * @apiSuccess {number} bg_target_top            User Bg_target_top (defaults to 7, subject to change)
- * @apiSuccess {number} bg_target_bottom            User Bg_target_bottom (defaults to 3, subject to change)
- * @apiSuccess {number} height            User height
- * @apiSuccess {number} weight            User weight
- * @apiSuccess {date} birthdate            User birthdate
- * @apiSuccess {date} diagnosis_date            User diagnosis_date
- * @apiSuccess {string} gender            User gender
- * @apiSuccess {string} diabetes_type            Diabetes type (usually 1 or 2)
+
+ * @apiSuccess {number} id            User Id
+ * @apiSuccess {string} user            user (required, must be unique)
 
  * @apiSuccessExample {json} Response
  *  [
  *      {
             "id": 1,
-            "username": "Patient Zero",
-            "bg_high": 7,
-            "bg_low": 3,
-            "bg_target_top": 7,
-            "bg_target_bottom": 3,
-            "height": null,
-            "weight": null,
-            "birthdate": null,
-            "diagnosis_date": null,
-            "gender": null,
-            "diabetes_type": null,
+            "user": "Patient Zero",
         },
         {
             "id": 2,
-            "username": "Patient One",
-            "bg_high": 6,
-            "bg_low": 4,
-            "bg_target_top": 7,
-            "bg_target_bottom": 3,
-            "height": null,
-            "weight": null,
-            "birthdate": null,
-            "diagnosis_date": null,
-            "gender": null,
-            "diabetes_type": null
+            "user": "Patient One",
         }
     ]
 *
 *
 */
-
 server.get('/', async (req, res) => {
     try {
         const users = await db('users');
@@ -76,6 +45,29 @@ server.get('/', async (req, res) => {
 
 
 
+
+
+
+/**
+ * @api {get} /api/users/:id GET /api/users/:id
+ * @apiVersion 1.0.0
+ * @apiName Get Users by id
+ * @apiGroup Users
+ *
+ * @apiExample Request
+ * axios.get('/api/users/:id');
+ *
+ * @apiParam {id} id            User Id
+
+ * @apiHeader {string} authorization This is for a protected route!
+
+ * @apiSuccess {number} id User ID
+ * @apiSuccessExample {json} Response
+    {
+        "id": 2,
+        "user": "Patient One",
+    }
+*/
 server.get('/:id', async (req, res) => {
     try {
         const userById = await db('users').where({ id:req.params.id }).first();
